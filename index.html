@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shulker — Minecraft Server</title>
+<meta name="description" content="Shulker Minecraft server — Java and Bedrock.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+:root{--bg:#07070c;--panel:#0f0d18;--purple:#9b5cff;--violet:#c084fc;--text:#f7f3ff;--muted:#a9a4ba;--line:#ffffff16;--green:#63e6be}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:linear-gradient(#9b5cff12 1px,transparent 1px),linear-gradient(90deg,#9b5cff12 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(#000,transparent 78%)}
+a{text-decoration:none;color:inherit}.wrap{width:min(1160px,92%);margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5}.logo{font:700 25px "Space Grotesk";letter-spacing:-1px}.logo b{color:var(--violet)}
+.navlinks{display:flex;gap:28px;color:#c9c4d8;font-size:14px}.navlinks a:hover{color:#fff}.navbtn{padding:10px 16px;border:1px solid #c084fc55;border-radius:10px;background:#9b5cff18}
+.hero{min-height:670px;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:#ffffff08;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700;color:#ddd2ff}.dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 15px var(--green)}
+h1{font:700 clamp(52px,7vw,92px)/.94 "Space Grotesk";letter-spacing:-5px;margin:22px 0}.gradient{background:linear-gradient(110deg,#fff,#c084fc,#9b5cff);-webkit-background-clip:text;color:transparent}.hero p{max-width:590px;color:var(--muted);font-size:17px;line-height:1.7}
+.actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{padding:14px 19px;border-radius:11px;font-weight:800;font-size:14px;border:1px solid var(--line);display:inline-block;transition:.2s}.primary{background:linear-gradient(135deg,#9b5cff,#7139d9);box-shadow:0 12px 35px #7b39d933}.secondary{background:#ffffff08}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.visual{min-height:410px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(145deg,#9b5cff1f,#ffffff04);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 30px 100px #0008}.visual:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#9b5cff;filter:blur(100px);opacity:.22}
+.shulker{width:220px;height:180px;background:linear-gradient(145deg,#8c49d7,#51228e);border-radius:28px 28px 20px 20px;position:relative;z-index:1;box-shadow:0 35px 80px #7836d280,inset 0 3px #ffffff33;animation:float 4s ease-in-out infinite}.shulker:before{content:"";position:absolute;width:185px;height:55px;left:18px;top:-31px;border-radius:70% 70% 25% 25%;background:linear-gradient(145deg,#b36aff,#7137b8);box-shadow:inset 0 3px #ffffff33}.eye{position:absolute;width:20px;height:28px;background:#17101f;border-radius:50%;top:45px}.left{left:70px}.right{right:70px}.core{position:absolute;left:50%;top:95px;transform:translateX(-50%);width:38px;height:38px;border-radius:9px;background:#dca8ff;box-shadow:0 0 25px #dca8ff}@keyframes float{50%{transform:translateY(-16px) rotate(1deg)}}
+section{padding:105px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}.kicker{color:#a879ff;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:2px}h2{font:700 42px "Space Grotesk";letter-spacing:-2px;margin-top:9px}.head p{color:var(--muted);max-width:440px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{padding:27px;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff0b,#ffffff03);border-radius:18px;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#c084fc55}.icon{width:42px;height:42px;border-radius:12px;background:#9b5cff24;display:grid;place-items:center;color:#c084fc;font-weight:800;margin-bottom:22px}.card h3{font-size:17px;margin-bottom:9px}.card p{color:var(--muted);font-size:14px;line-height:1.65}
+.join{border:1px solid #9b5cff4d;background:radial-gradient(circle at 80% 20%,#9b5cff2e,transparent 35%),#0d0b14;border-radius:25px;padding:55px}.join>p{color:var(--muted);margin-top:12px;line-height:1.6}.address{display:grid;grid-template-columns:1fr auto;gap:12px;margin-top:28px}.addressbox{padding:18px 20px;border:1px solid var(--line);background:#09080d;border-radius:12px;font:14px monospace;color:#ddd5ee}.copy{border:0;background:#fff;color:#09070e;padding:0 22px;border-radius:12px;font-weight:800;cursor:pointer}.platforms{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}.platform{padding:22px;border:1px solid var(--line);border-radius:15px;background:#ffffff06}.platform strong{display:block;margin-bottom:7px}.platform span{color:var(--muted);font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.stepnum{font:38px "Space Grotesk";color:#7141ae;margin-bottom:20px}.cta{text-align:center;padding:90px 25px;border-block:1px solid var(--line)}.cta p{color:var(--muted);margin:15px auto 27px;max-width:570px;line-height:1.7}footer{padding:30px 0;color:#777184;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding:80px 0}.visual{min-height:330px}.grid,.steps,.platforms{grid-template-columns:1fr}.head{display:block}.head p{margin-top:15px}h1{letter-spacing:-3px}.join{padding:30px}.address{grid-template-columns:1fr}.copy{height:50px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="#">SHULKER<b>.</b></a><div class="navlinks"><a href="#features">Features</a><a href="#community">Community</a><a href="#join">Join</a></div><a class="navbtn" href="#join">Play now</a></nav>
+
+<section class="hero">
+<div><div class="eyebrow"><span class="dot"></span> SERVER ONLINE • JAVA + BEDROCK</div>
+<h1>YOUR NEXT<br><span class="gradient">MINECRAFT</span><br>SERVER.</h1>
+<p>A polished Minecraft experience built for players who want a server worth coming back to. Bring your friends, build something massive, and make your mark.</p>
+<div class="actions"><a class="btn primary" href="#join">Join Shulker →</a><a class="btn secondary" href="#features">Explore server</a></div></div>
+<div class="visual"><div class="shulker"><i class="eye left"></i><i class="eye right"></i><i class="core"></i></div></div>
+</section>
+
+<section id="features"><div class="head"><div><div class="kicker">Why Shulker</div><h2>Built for the long run.</h2></div><p>Everything you need to turn a server into a place you actually want to play.</p></div>
+<div class="grid">
+<article class="card"><div class="icon">01</div><h3>Java + Bedrock</h3><p>Play from Java Edition or Bedrock Edition and bring your friends with you.</p></article>
+<article class="card"><div class="icon">02</div><h3>Community first</h3><p>A server designed around players, friendships, builds, events and memorable moments.</p></article>
+<article class="card"><div class="icon">03</div><h3>Always something to do</h3><p>Build, explore, survive and create your own story instead of logging in with nothing to do.</p></article>
+<article class="card"><div class="icon">04</div><h3>Made to stand out</h3><p>A clean, modern server identity that feels different from a generic SMP page.</p></article>
+<article class="card"><div class="icon">05</div><h3>Bring your crew</h3><p>Invite your friends and turn a normal world into your own Minecraft community.</p></article>
+<article class="card"><div class="icon">06</div><h3>Your adventure</h3><p>Build your base, explore the world and make the server yours.</p></article>
+</div></section>
+
+<section id="community"><div class="head"><div><div class="kicker">Community</div><h2>Find your people.</h2></div><p>Shulker is more than an IP address. It is a place to build, chill and play together.</p></div>
+<div class="grid">
+<article class="card"><div class="icon">◆</div><h3>Build something huge</h3><p>Start small or go completely overboard. Your next project can become a server landmark.</p></article>
+<article class="card"><div class="icon">+</div><h3>Play your way</h3><p>Whether you love survival, building or exploring, there is room for your playstyle.</p></article>
+<article class="card"><div class="icon">★</div><h3>Make memories</h3><p>The best servers are the ones where something random happens every time you log in.</p></article>
+</div></section>
+
+<section id="join"><div class="join"><div class="kicker">Connection</div><h2>Ready to join?</h2><p>Java players can use the full address. Bedrock players use the address and port shown below.</p>
+<div class="address"><div class="addressbox" id="serverAddress">fried-rings.tun.ply.gg:14512</div><button class="copy" onclick="copyIP()">Copy address</button></div>
+<div class="platforms"><div class="platform"><strong>☕ Java Edition</strong><span>Server address: fried-rings.tun.ply.gg:14512</span></div><div class="platform"><strong>▣ Bedrock Edition</strong><span>Address: fried-rings.tun.ply.gg • Port: 14512</span></div></div>
+</div></section>
+
+<section><div class="head"><div><div class="kicker">Get started</div><h2>Three steps. That's it.</h2></div></div>
+<div class="steps"><article class="card"><div class="stepnum">01</div><h3>Open Minecraft</h3><p>Launch the edition you normally play.</p></article><article class="card"><div class="stepnum">02</div><h3>Add the server</h3><p>Enter the Shulker address and Bedrock port when required.</p></article><article class="card"><div class="stepnum">03</div><h3>Start playing</h3><p>Join the world, meet players and start building your story.</p></article></div></section>
+
+<div class="cta"><div class="kicker">Shulker awaits</div><h2>Make your next world matter.</h2><p>Grab your friends, launch Minecraft and join the server.</p><a class="btn primary" href="#join">Get the IP →</a></div>
+<footer><span>© 2026 Shulker Server</span><span>Minecraft is a trademark of Mojang Studios.</span></footer>
+</div>
+<script>
+function copyIP(){navigator.clipboard.writeText("fried-rings.tun.ply.gg:14512");const b=document.querySelector(".copy"),old=b.textContent;b.textContent="Copied ✓";setTimeout(()=>b.textContent=old,1400)}
+</script>
+</body></html>
